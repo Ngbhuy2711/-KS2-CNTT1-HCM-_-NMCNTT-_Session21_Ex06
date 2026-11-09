@@ -1,70 +1,51 @@
- 3.1. Công thức Prompt 3 Thành phần nhờ AI giải thích lỗi
+ 1. Công thức Prompt 3 Thành phần giải thích lỗi Git
+Để hiểu rõ nguyên nhân lỗi error: open(".git/FETCH_HEAD"): Permission denied một cách bình dân và dễ hiểu nhất, bạn có thể sử dụng cấu trúc Prompt 3 thành phần sau khi hỏi AI:
 
-Để nhận được câu trả lời dễ hiểu và tập trung nhất từ AI, áp dụng công thức [Vai trò / Bối cảnh] + [Dữ liệu đầu vào] + [Yêu cầu đầu ra]:
+[Vai trò]: Bạn là một cố vấn kỹ thuật và chuyên gia Git giàu kinh nghiệm, giỏi giải thích các vấn đề lập trình phức tạp bằng ngôn từ đơn giản, gần gũi cho người mới bắt đầu.
 
-[Bối cảnh/Vai trò]: 
-Tôi là sinh viên CNTT mới bắt đầu học Git và đang chuẩn bị nộp bài tập gấp.
+[Nhiệm vụ]: Hãy giải thích nguyên nhân gốc rễ của lỗi Git error: open(".git/FETCH_HEAD"): Permission denied xuất hiện trong Terminal khi tôi đang cố gắng đồng bộ code lên GitHub.
 
-[Dữ liệu đầu vào]: 
-Terminal của tôi vừa báo lỗi sau khi thực hiện lệnh push/fetch:
-"error: open(".git/FETCH_HEAD"): Permission denied"
+[Yêu cầu đầu ra]: Giải thích bằng một ví dụ thực tế trong đời sống (ví dụ như việc mượn chìa khóa phòng hoặc quyền mở tủ hồ sơ), giữ độ dài ngắn gọn dưới 4 câu, tuyệt đối không dùng thuật ngữ chuyên ngành quá khó hiểu.
 
-[Yêu cầu đầu ra]: 
-Hãy giải thích nguyên nhân gây ra lỗi này bằng ngôn ngữ đơn giản/bình dân nhất (dễ hiểu như giải thích cho người không chuyên). Sau đó đưa ra 2 bước khắc phục nhanh nhất trên hệ điều hành Windows.
+2. Xử lý "Run as Administrator" & Hướng dẫn chụp màn hình chuẩn chuyên nghiệp
+Xử lý kỹ thuật
+Khi Terminal báo lỗi Permission denied đối với file .git/FETCH_HEAD, điều này thường xảy ra do thư mục ẩn .git trên máy tính đang bị khóa quyền ghi/đọc (có thể do trước đó bạn hoặc một tiến trình khác đã chạy bằng quyền Admin khiến tài khoản hiện tại không có quyền thao tác trực tiếp).
 
+Thực hiện: Đóng Terminal hiện tại, nhấp chuột phải vào biểu tượng Terminal/PowerShell hoặc VS Code và chọn Run as Administrator.
 
-3.2. Hướng dẫn minh họa & Quy tắc chụp ảnh màn hình chuyên nghiệp
+Kiểm tra: Điều hướng lại thư mục dự án và chạy lại lệnh Git của bạn (ví dụ: git pull hoặc git push).
 
-Khi làm theo hướng dẫn của AI (Mở Terminal với quyền Run as Administrator), để lưu lại bằng chứng troubleshooting đúng chuẩn kỹ thuật, ảnh chụp màn hình cần tuân thủ các quy tắc:
+Mẹo chụp ảnh màn hình minh họa (Professional Screenshot Guidelines)
+Nếu bạn cần chụp ảnh màn hình để làm minh họa báo cáo, hãy tuân thủ các quy tắc sau:
 
-Khoanh vùng nổi bật (Highlight): Dùng khung hình chữ nhật màu đỏ/cam khoanh tròn đúng khu vực hiển thị dòng chữ Administrator: Command Prompt hoặc Administrator: Windows PowerShell và dòng lệnh Git bị lỗi.
+Khoanh vùng lỗi: Sử dụng khung viền đỏ (hoặc mũi tên chỉ dẫn) tập trung chính xác vào dòng thông báo lỗi error: open(".git/FETCH_HEAD"): Permission denied để người xem nhìn thấy ngay trọng tâm.
 
-Bảo mật thông tin cá nhân (Privacy Masking):
+Bảo mật thông tin cá nhân: Cắt bỏ (crop) hoặc làm mờ các phần hiển thị tên tài khoản máy tính cá nhân, email, hay các tab trình duyệt nhạy cảm ở thanh tác vụ (Taskbar/Browser tabs).
 
-Che (blur/blackout) các đường dẫn chứa tên người dùng máy tính cá nhân nếu có thông tin nhạy cảm (VD: C:\Users\SecretName\...).
+3. Tin nhắn nhờ Giảng viên hỗ trợ theo Bug Reporting Framework
+Nếu sau khi thử các cách (kể cả chạy quyền Administrator) mà vẫn không khắc phục được lỗi, bạn hãy sử dụng mẫu tin nhắn tuân thủ Bug Reporting Framework dưới đây để gửi cho giảng viên:
 
-Che các mã Token, SSH Key hoặc thông tin Credentials cá nhân xuất hiện trên Terminal.
+Tiêu đề: [Hỗ trợ đồ án/bài tập] Lỗi phân quyền Git Permission denied (.git/FETCH_HEAD) trước deadline
 
-Mô tả ảnh chụp màn hình minh họa:
+1. Môi trường (Environment):
 
-Ảnh 1: Giao diện menu Start -> Click chuột phải vào Command Prompt -> Chọn Run as administrator.
+Hệ điều hành: Windows 11
 
-Ảnh 2: Màn hình Terminal có nhãn Administrator thực thi lệnh phân quyền lại thư mục:
-takeown /f .git /r /d y hoặc icacls .git /grant %username%:F /t
+Công cụ: VS Code / Git Bash
 
-(Hình ảnh minh họa thực tế được lưu tại: images/admin_permission_fix.png)
+Tình huống: Đang thực hiện đẩy code dự án lên GitHub để nộp bài.
 
-3.3. Tin nhắn nhờ Giảng viên hỗ trợ theo Bug Reporting Framework
+2. Mô tả lỗi (Description):
+Khi em thực hiện lệnh git push (hoặc git pull), Terminal lập tức từ chối thực thi và trả về thông báo lỗi: error: open(".git/FETCH_HEAD"): Permission denied.
 
-Trong trường hợp đã thực hiện cấp quyền Administrator nhưng hệ thống vẫn bị khóa file .git/FETCH_HEAD, tin nhắn gửi Giảng viên/Mentor được chuẩn hóa như sau:
+3. Các bước đã thử khắc phục (Steps Tried):
 
-Em chào Thầy/Cô ạ,
+Đã thử chạy lại lệnh nhiều lần nhưng không thành công.
 
-Em đang gặp sự cố về quyền truy cập file trong Git khi đẩy bài tập lên GitHub và cần nhờ Thầy/Cô hỗ trợ kiểm tra giúp em ạ.
+Đã thử mở Terminal dưới quyền Run as Administrator nhưng quyền ghi vào file .git/FETCH_HEAD vẫn bị từ chối do xung đột phân quyền file hệ thống.
 
-Dưới đây là thông tin chi tiết sự cố theo Bug Report:
+4. Đính kèm (Attachments):
 
-1. Context (Ngữ cảnh):
-- Hệ điều hành: Windows 11 Pro (64-bit)
-- Phần mềm: Git Bash / VS Code Terminal
-- Thao tác: Em thực hiện lệnh `git pull origin main` để cập nhật bài trước khi push.
+(Đính kèm hình ảnh màn hình dòng lệnh lỗi đã được khoanh vùng đỏ và che thông tin cá nhân)
 
-2. Expected (Kỳ vọng):
-- Git đồng bộ mã nguồn thành công và ghi nội dung mới vào tệp `.git/FETCH_HEAD`.
-
-3. Actual (Thực tế):
-- Terminal liên tục báo lỗi phân quyền và từ chối ghi tệp:
-  error: open(".git/FETCH_HEAD"): Permission denied
-
-4. Log & Các bước em đã tự khắc phục:
-- Log lỗi chi tiết:
-  ```bash
-  error: open(".git/FETCH_HEAD"): Permission denied
-  fatal: could not open '.git/FETCH_HEAD' for writing
-  ```
-- Các bước đã thử nhưng chưa thành công:
-  + Đã đóng toàn bộ VS Code và chạy lại Terminal bằng quyền "Run as Administrator".
-  + Đã kiểm tra thuộc tính Read-Only của thư mục `.git` và mở khóa nhưng file `FETCH_HEAD` vẫn bị khóa bởi tiến độ background.
-  + Đã thử dùng AI phân tích nhưng lệnh `icacls` báo không thể thay đổi Owner.
-
-Em có đính kèm ảnh chụp màn hình Terminal lỗi và phân quyền bên dưới. Em cảm ơn Thầy/Cô nhiều ạ!
+Kính mong thầy/cô hướng dẫn giúp em cách khắc phục lỗi phân quyền này để em kịp hoàn thành việc nộp bài ạ. Em xin chân thành cảm ơn thầy/cô!
